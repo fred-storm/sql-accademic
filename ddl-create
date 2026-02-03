@@ -1,0 +1,22 @@
+Use Movies
+Go
+
+-- =========================================
+-- DDL Script: Add Producer Table to Movies Database
+-- =========================================
+
+-- Create Producer Table
+CREATE TABLE Producer (
+    ProducerID INT NOT NULL,
+    FirstName VARCHAR(15),
+    LastName VARCHAR(35) NOT NULL,
+    CONSTRAINT PK_Producer PRIMARY KEY (ProducerID)
+);
+-- Add ProducerID Column to Movies Table
+ALTER TABLE Movies
+    ADD ProducerID INT;
+
+-- Add Foreign Key to Movies Table
+ALTER TABLE Movies
+    ADD CONSTRAINT FK_Movies_Producer 
+    FOREIGN KEY (ProducerID) REFERENCES Producer(ProducerID);
