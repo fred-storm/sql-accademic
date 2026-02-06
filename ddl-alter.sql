@@ -1,3 +1,9 @@
+-- Quick way to backup a table
+select * into test_moives from Movies
+
+
+
+
 --Update Producer Table to include new columns in Movies Database
 
 Use Movies
